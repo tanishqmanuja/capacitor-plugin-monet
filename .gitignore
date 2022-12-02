@@ -59,3 +59,14 @@ captures
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+
+# VSCode IDE
+.vscode

@@ -7,6 +7,7 @@ export default {
       name: 'capacitorMonet',
       globals: {
         '@capacitor/core': 'capacitorExports',
+        '@tanishqmanuja/web-monet': 'webMonet',
       },
       sourcemap: true,
       inlineDynamicImports: true,
@@ -18,5 +19,5 @@ export default {
       inlineDynamicImports: true,
     },
   ],
-  external: ['@capacitor/core'],
+  external: ['@capacitor/core', '@tanishqmanuja/web-monet'],
 };

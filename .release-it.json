@@ -1,0 +1,21 @@
+{
+	"git": {
+		"tagName": "v${version}",
+		"commitMessage": "chore: release v${version}",
+		"pushRepo": "https://github.com/tanishqmanuja/capacitor-plugin-monet"
+	},
+	"github": {
+		"release": true,
+		"releaseName": "v${version}",
+		"tokenRef": "GITHUB_TOKEN"
+	},
+	"hooks": {
+		"after:bump": [
+			"npm run clean",
+			"npm run build"
+		]
+	},
+	"npm": {
+		"publish": false
+	}
+}

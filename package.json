@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-plugin-monet",
+  "name": "@tanishqmanuja/capacitor-plugin-monet",
   "version": "0.0.1",
   "description": "Material You Monet Plugin for Capacitor",
   "main": "dist/plugin.cjs.js",
@@ -57,7 +57,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.32.0",
     "swiftlint": "^1.0.1",
-    "typescript": "~4.1.5"
+    "typescript": "^4.9.3"
   },
   "peerDependencies": {
     "@capacitor/core": "^4.0.0"
@@ -74,5 +74,11 @@
     "android": {
       "src": "android"
     }
+  },
+  "dependencies": {
+    "@tanishqmanuja/web-monet": "^0.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
