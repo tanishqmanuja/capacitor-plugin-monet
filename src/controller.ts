@@ -34,9 +34,9 @@ export class MonetController {
         this.injectStyleRoot(palette, opts.prefix);
       }
     } else {
-      const ionicPrimaryColor = getComputedStyle(
-        document.documentElement,
-      ).getPropertyValue('--ion-color-primary') as HexColor;
+      const ionicPrimaryColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--ion-color-primary')
+        .trim() as HexColor;
       const palette = getColorScheme(
         ionicPrimaryColor || opts.fallbackSeedColor,
       );
