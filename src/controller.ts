@@ -19,19 +19,23 @@ const defaultOptions: Required<AutoInjectStyleOptions> = {
 export class MonetController {
   constructor(private monet: typeof Monet) {}
 
-  async autoInjectStyle(options?: AutoInjectStyleOptions): Promise<void> {
+  async autoInjectStyle(
+    options?: AutoInjectStyleOptions,
+  ): Promise<MonetPalette> {
     const opts = { ...defaultOptions, ...options };
 
     if (Capacitor.getPlatform() === 'android') {
       const palette = await this.monet.getSystemMonetPalette();
       if (palette) {
         this.injectStyleRoot(palette, opts.prefix);
+        return palette;
       } else {
         console.warn(
           `[CapacitorMonet]: Unable to get palette, unsupported android system.`,
         );
         const palette = getColorScheme(opts.fallbackSeedColor);
         this.injectStyleRoot(palette, opts.prefix);
+        return palette;
       }
     } else {
       const ionicPrimaryColor = getComputedStyle(document.documentElement)
@@ -41,6 +45,7 @@ export class MonetController {
         ionicPrimaryColor || opts.fallbackSeedColor,
       );
       this.injectStyleRoot(palette, opts.prefix);
+      return palette;
     }
   }
 
