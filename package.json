@@ -79,7 +79,7 @@
     }
   },
   "dependencies": {
-    "@tanishqmanuja/web-monet": "^0.1.1"
+    "@tanishqmanuja/web-monet": "^0.1.2"
   },
   "publishConfig": {
     "access": "public"
